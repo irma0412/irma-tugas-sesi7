@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-15T05:05:15.864Z",
+    "end": "2025-06-15T05:05:17.922Z",
+    "duration": 2058,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "348d78e5-833a-4f70-aca1-4dc093ab5c30",
+      "title": "",
+      "fullFile": "C:\\Users\\IRMA SURYANI\\Desktop\\API -TEST\\TUGASSESI7\\reqres.js",
+      "file": "\\TUGASSESI7\\reqres.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "138c18a1-969a-452d-9d3a-4404db0acf29",
+          "title": "Fitur Reqres",
+          "fullFile": "C:\\Users\\IRMA SURYANI\\Desktop\\API -TEST\\TUGASSESI7\\reqres.js",
+          "file": "\\TUGASSESI7\\reqres.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get Reqres",
+              "fullTitle": "Fitur Reqres Get Reqres",
+              "timedOut": false,
+              "duration": 594,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users?page=2\");\nconst data = await response.json();\n// console.log(data);\n// assert status respon\nassert.strictEqual(response.status, 200, \"Status respon bukan 200\");\n// assert untuk memastikan respon tidak kosong\nassert.ok(data, \"Respon tidak berisi teks apapun atau kosong\");\n// assert untuk memastikan respon berisi teks json valid\nassert.ok(data.data, \"Respon tidak berisi properti 'data'\");",
+              "err": {},
+              "uuid": "ddeabc98-3076-4531-84af-3d893ad9523d",
+              "parentUUID": "138c18a1-969a-452d-9d3a-4404db0acf29",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST Reqres",
+              "fullTitle": "Fitur Reqres POST Reqres",
+              "timedOut": false,
+              "duration": 418,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users\", {\n    method: \"POST\",\n    headers: {\n        \"x-api-key\": \"reqres-free-v1\",\n        \"Content-Type\": \"application/json\",\n    },\n    body: JSON.stringify({\n        \"name\": \"Irma Suryani\",\n         \"job\": \"Freelance paraphrasing & Dokumen editing\",\n    }),\n});\nconst data = await response.json();\n//console.log(data);\n// assert status respon\nassert.strictEqual(response.status, 201, \"Status respon bukan 201\");\n // assert untuk memastikan respon tidak kosong\nassert.ok(data, \"Respon tidak berisi teks apapun atau kosong\");\n// assert untuk memastikan nama yang ada sesuai\nassert.strictEqual(data.name, \"Irma Suryani\", \"Nama tidak sesuai\");",
+              "err": {},
+              "uuid": "609f7b2c-521d-4acf-8969-61d8d2b8b69a",
+              "parentUUID": "138c18a1-969a-452d-9d3a-4404db0acf29",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PATCH Reqres",
+              "fullTitle": "Fitur Reqres PATCH Reqres",
+              "timedOut": false,
+              "duration": 634,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n    method: \"PATCH\",\n    headers: {\n        \"x-api-key\": \"reqres-free-v1\",\n        \"Content-Type\": \"application/json\",\n    },\n    body: JSON.stringify({\n         \"name\": \"Irma Suryani\",\n         \"job\": \"QA Engineer (dreamjob)\",\n    }),\n});\nconst data = await response.json();\n//console.log(data);\n// assert status respon\nassert.strictEqual(response.status, 200, \"Status respon bukan 200 OK\");\n // assert untuk memastikan respon tidak kosong\nassert.ok(data, \"Respon tidak berisi teks apapun atau kosong\");\n// assert untuk memastikan job terupdate dengan relevan\nassert.strictEqual(data.job, \"QA Engineer (dreamjob)\", \"Updatean job tidak relevan\");",
+              "err": {},
+              "uuid": "bb8bf444-9a0f-498b-8832-56638809be18",
+              "parentUUID": "138c18a1-969a-452d-9d3a-4404db0acf29",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE Reqres",
+              "fullTitle": "Fitur Reqres DELETE Reqres",
+              "timedOut": false,
+              "duration": 397,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n    method : \"DELETE\",\n    headers: { \"x-api-key\": \"reqres-free-v1\" } //api key untuk dapat mengakses website\n});\n// menggunakan respon text karena body respon kosong tidak memuat text JSON\nconst responseText = await response.text();\n// console.log(data);\n// assert status respon\nassert.strictEqual(response.status, 204, \"Status respon bukan 204\");\n// assert untuk memastikan body respon kosong\nassert.strictEqual(responseText, \"\", \"Respon tidak kosong, seharusnya kosong\");",
+              "err": {},
+              "uuid": "dcd59a73-f0d3-407a-b797-dfcce232f7b8",
+              "parentUUID": "138c18a1-969a-452d-9d3a-4404db0acf29",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ddeabc98-3076-4531-84af-3d893ad9523d",
+            "609f7b2c-521d-4acf-8969-61d8d2b8b69a",
+            "bb8bf444-9a0f-498b-8832-56638809be18",
+            "dcd59a73-f0d3-407a-b797-dfcce232f7b8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2043,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.6.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

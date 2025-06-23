@@ -6,7 +6,7 @@
 const assert = require("assert");
 
 describe("Fitur Reqres", function () {
-    it("Get Single User", async function () {
+    it("Get List User", async function () {
         const response = await fetch("https://reqres.in/api/users?page=2");
         const data = await response.json();
         // console.log(data);

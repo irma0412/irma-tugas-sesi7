@@ -6,7 +6,7 @@
 const assert = require("assert");
 
 describe("Fitur Reqres", function () {
-    it("Get Reqres", async function () {
+    it("Get Single User", async function () {
         const response = await fetch("https://reqres.in/api/users?page=2");
         const data = await response.json();
         // console.log(data);
@@ -18,7 +18,7 @@ describe("Fitur Reqres", function () {
         assert.ok(data.data, "Respon tidak berisi properti 'data'");
 
     });
-    it("POST Reqres", async function() {
+    it("POST Create User", async function() {
         const response = await fetch("https://reqres.in/api/users", {
             method: "POST",
             headers: {
@@ -41,7 +41,7 @@ describe("Fitur Reqres", function () {
         assert.strictEqual(data.name, "Irma Suryani", "Nama tidak sesuai");
        
     });
-     it("PATCH Reqres", async function() {
+     it("PATCH Update User", async function() {
         const response = await fetch("https://reqres.in/api/users/2", {
             method: "PATCH",
             headers: {
@@ -64,7 +64,7 @@ describe("Fitur Reqres", function () {
         assert.strictEqual(data.job, "QA Engineer (dreamjob)", "Updatean job tidak relevan");
        
     });
-     it("DELETE Reqres", async function () {
+     it("DELETE User", async function () {
             const response = await fetch("https://reqres.in/api/users/2", {
                 method : "DELETE",
                 headers: { "x-api-key": "reqres-free-v1" } //api key untuk dapat mengakses website
